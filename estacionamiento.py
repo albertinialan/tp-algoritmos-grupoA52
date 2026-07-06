@@ -1,5 +1,6 @@
 espacios_disponibles = 10
 autos_atendidos = 0
+recaudacion_total = 0
 
 while True:
     print("\n--- SISTEMA DE ESTACIONAMIENTO ---")
@@ -17,9 +18,18 @@ while True:
         else:
             print("ESTACIONAMIENTO LLENO! NO QUEDAN LUGARES DISPONIBLES")
     elif opcion == "2":
-        print("voy a programar la saluda y el cobro")                 
+        print("Se va a retirar un vehículo")
+        espacios_disponibles = espacios_disponibles + 1
+        hora_estacionado = float(input("Cuántas horas estuvo estacionado? ")) 
+        if hora_estacionado < 1:
+            costo_estacionado = 2000
+        else:  
+            costo_estacionado = hora_estacionado * 2500        
+        recaudacion_total = recaudacion_total + costo_estacionado   
     elif opcion == "3":
         print("PROGRAMA FINALIZADO")
+        print("AUTOS ATENDIDOS: ", autos_atendidos)
+        print("RECAUDACION TOTAL: ", recaudacion_total)
         break   
     else:
         print("ERROR!, opción inválida")    
