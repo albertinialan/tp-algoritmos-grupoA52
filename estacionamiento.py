@@ -4,21 +4,21 @@ recaudacion_total = 0
 
 while True:
     print("\n--- SISTEMA DE ESTACIONAMIENTO ---")
-    print("1. Ingresar vehículo")
+    print("\n1. Ingresar vehículo")
     print("2. Retirar vehículo")
     print("3. Salir")
     
-    opcion = input("Elegí una opción (1-3): ")
+    opcion = input("\nElegí una opción (1-3): ")
     
     if opcion == "1":
         if espacios_disponibles > 0:
             espacios_disponibles = espacios_disponibles - 1
             autos_atendidos = autos_atendidos + 1
-            print("Vehículo ingresado. Quedan", espacios_disponibles, "espacios disponibles")
+            print("VEHÍCULO INGRESADO. QUEDAN", espacios_disponibles, "ESPACIOS DISPONIBLES")
         else:
             print("ESTACIONAMIENTO LLENO! NO QUEDAN LUGARES DISPONIBLES")
     elif opcion == "2":
-        print("Se va a retirar un vehículo")
+        print("SE VA A RETIRAR UN VEHÍCULO")
         espacios_disponibles = espacios_disponibles + 1
         hora_estacionado = float(input("Cuántas horas estuvo estacionado? ")) 
         if hora_estacionado < 1:
