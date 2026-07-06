@@ -1,3 +1,9 @@
+def calcular_cobro(horas):
+    if horas < 1:
+        return 2000
+    else:
+        return horas * 2500
+
 espacios_disponibles = 10
 autos_atendidos = 0
 recaudacion_total = 0
@@ -21,14 +27,11 @@ while True:
         print("\nSE VA A RETIRAR UN VEHÍCULO")
         espacios_disponibles = espacios_disponibles + 1
         hora_estacionado = float(input("\nCUANTAS HORAS ESTUVO ESTACIONADO? ")) 
-        if hora_estacionado < 1:
-            costo_estacionado = 2000
-        else:  
-            costo_estacionado = hora_estacionado * 2500        
+        costo_estacionado = calcular_cobro(hora_estacionado)     
         recaudacion_total = recaudacion_total + costo_estacionado   
     elif opcion == "3":
         print("\nPROGRAMA FINALIZADO")
-        print("AUTOS ATENDIDOS: ", autos_atendidos)
+        print("\nAUTOS ATENDIDOS: ", autos_atendidos)
         print("RECAUDACION TOTAL: ", recaudacion_total)
         break   
     else:
